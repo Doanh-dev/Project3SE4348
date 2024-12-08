@@ -27,3 +27,8 @@ The program should not need to handle quit command
 ### 12/8/2024 2:00 am
 Complete create, open, insert function
 Need to do search, load, extract
+
+### 12/8/2024 1:48 pm
+Complete the second program
+moving to the 3 one
+need to make the menu and handle user selction choice

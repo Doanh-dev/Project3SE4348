@@ -38,3 +38,68 @@ def insert(btree, key, value):
     else:
         print("Indexed file need to be opended or create to procceed.")
         
+def search(btree, key):
+    """Search for a key in the index file"""
+    if btree:
+        value = btree.search(key)
+        if value is not None: 
+            print(f"Key {key} found with value {value}")
+        else:
+            print(f"Key {key} not found")
+    else:
+        print(f"Please open or create an index file first")
+
+def load(btree, file_name):
+    """Load key-value pairs from a file and insert them into the btree."""
+    if not os.path.exists(file_name):
+        print("File does not exist.")
+        return
+    with open(file_name, 'r') as f:
+        for line in f:
+            try:
+                key, value = map(int, line.strip().split(","))
+                btree.insert(key, value)
+            except ValueError:
+                print(f"Invalid line in file: {line.strip()}. Skipping.")
+
+def print_btree(btree):
+    """Print all key-value pairs in the B-Tree."""
+    if btree:
+        print("Tree contents:")
+        print_in_order(btree.root, btree)
+    else:
+        print("No index file is opne. Please open or create an index file first.")
+
+def print_in_order(node, btree):
+    """Helper function to traverse and print the tree in order."""
+    if node:
+        for i in range(node.num_keys):
+            if not node.leaf:
+                child = btree.read_node(node.children[i])
+                print_in_order(child, btree)
+            print(f"Key: {node.keys[i]}, value: {node.values[i]}")
+        if not node.leaf:
+            child = btree.read_node(node.children[node.num_keys])
+            print_in_order(child, btree)
+
+def extract(btree, save_file):
+    """Save all key-value pairs in the BTree ot a file."""
+    if os.path.exists(save_file):
+        overwrite = input("File already exists. Overwrite?(yes/no)").strip().lower()
+        if overwrite != "yes":
+            print("Aborting extraction.")
+            return
+    with open(save_file, "w") as f:
+        extract_in_order(btree.root, btree, f)
+
+def extract_in_order(node, btree, file):
+    """Helper function to traverse the tree and write data to a file"""
+    if node:
+        for i in range(node.num_keys):
+            if not node.leaf:
+                child = btree.read_node(node.children[i])
+                extract_in_order(child, btree, file)
+            file.write(f"{node.keys[i]},{node.values[i]} \n")
+        if not node.leaf:
+            child = btree.read_node(node.children[node.num_keys])
+            extract_in_order(child, btree, file)
