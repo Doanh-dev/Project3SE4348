@@ -37,3 +37,7 @@ need to make the menu and handle user selction choice
 Create the the third branch to work on the 3 branch
 merge the command -second to the 3 one
 need to create a python file
+
+### 12/8/2024 2:05 pm
+Finish the main.py program
+need to test and make addition if need
