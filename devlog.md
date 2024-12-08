@@ -23,3 +23,7 @@ create branch for the second program
 the program shoud handle the command that assignment require like create, open,
 the program command open must work perfectly so command like inset, search, load, extract can work
 The program should not need to handle quit command
+
+### 12/8/2024 2:00 am
+Complete create, open, insert function
+Need to do search, load, extract
