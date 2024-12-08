@@ -32,3 +32,8 @@ Need to do search, load, extract
 Complete the second program
 moving to the 3 one
 need to make the menu and handle user selction choice
+
+### 12/8/2024 2:05 pm
+Create the the third branch to work on the 3 branch
+merge the command -second to the 3 one
+need to create a python file
