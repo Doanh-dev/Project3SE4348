@@ -16,3 +16,10 @@ Move on to the second program
 merge the main branch
 push it to github
 delete the branch that use for first 1 program
+
+
+### 12/8/2024 12:38 am
+create branch for the second program
+the program shoud handle the command that assignment require like create, open,
+the program command open must work perfectly so command like inset, search, load, extract can work
+The program should not need to handle quit command
