@@ -11,3 +11,8 @@ Creating a model for the first program
 ### 12/7/2024 7:59 pm
 Finish the first program
 Move on to the second program
+
+### 12/7/2024 8:12 pm
+merge the main branch
+push it to github
+delete the branch that use for first 1 program
