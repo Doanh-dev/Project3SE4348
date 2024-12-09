@@ -55,3 +55,7 @@ need to test the programs
 I am stating testing each command and I am looking for that the wrong printing text
 It turn out, I put the wrong function for the create command
 
+### 12/8/2024 9:22 pm
+The create command was fail and I found out the error is wrong type when create a file
+    in the commandHandler.py program
+    

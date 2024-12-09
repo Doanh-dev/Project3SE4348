@@ -3,7 +3,7 @@ from operationBtree import BTree
 
 def create(index_file):
     """Create a new indew file and initialize a B-Tree."""
-    if os.path.exitst(index_file):
+    if os.path.exists(index_file):
         overwrite = input("File already exists. Overite? (yes/no): ").strip().lower()
         if overwrite != "yes":
             print("Aborting creation.")
