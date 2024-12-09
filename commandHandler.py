@@ -20,15 +20,15 @@ def open_file(index_file):
         print("File does not exit.")
         return None
     #if it is then do this:
-    with open(index_file, 'rb+') as f:
-        magic_number = f.read(8).decode('utf-8').strip()
-        if magic_number != "4337PRJ3":
-            print("Invalid index file.")
-            return None
-        print(f"You are now in the index file: {index_file}")
-        f.seek(0)
-        btree = BTree(degree=10, file=f)
-        return btree
+    f = open(index_file, 'rb+')
+    magic_number = f.read(8).decode('utf-8').strip()
+    if magic_number != "4337PRJ3":
+        print("Invalid index file.")
+        return None
+    print(f"You are now in the index file: {index_file}")
+    f.seek(0)
+    btree = BTree(degree=10, file=f)
+    return btree
     
 def insert(btree, key, value):
     """insert a key-value pari into the Btree"""
