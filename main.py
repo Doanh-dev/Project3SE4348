@@ -10,7 +10,7 @@ def display_menu():
     print("5. load: loading a keys and values")
     print("6. print: Print BTree structure")
     print("7. extract: Extract the keys and values")
-    print("8. quite: Quit the program")
+    print("8. quite: Quit the program \n")
 
 def main():
     """Interactive menu"""
@@ -19,8 +19,8 @@ def main():
         display_menu()
         command = input("Enter command: ").strip().lower()
         if command in {"1", "create"}:
-            filename = input("Enter filenmae")
-            btree = open_file(filename)
+            filename = input("Enter filename: ")
+            btree = create(filename)
         elif command in {"2", "open"}:
             filename = input("Enter filename: ")
             btree = open_file(filename)
