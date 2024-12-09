@@ -62,4 +62,8 @@ The create command was fail and I found out the error is wrong type when create 
 ### 12/8/2024 9:35 pm
 The insert in the btree has problem, the problame probally handle the node not problay
 
-    
+### 12/8/2024 9:54 pm
+I figure out the erro was I close the file too early so I can not do the operation like insert, search
+    print, load
+My approach is changing the logic of the open the file only so I don't have to change logic 
+    each other method.
