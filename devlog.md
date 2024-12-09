@@ -67,3 +67,11 @@ I figure out the erro was I close the file too early so I can not do the operati
     print, load
 My approach is changing the logic of the open the file only so I don't have to change logic 
     each other method.
+
+### 12/8/2024 10:08 pm
+My approach work, I can do the the insert, print, and search, However it reach a problem
+    when I quit the program, and reopen the folder, I can't find it. I suspect that i did not 
+    close the file properly that lead to leaking. 
+My approach for this solution is make a variable file and assign it to whatever open or create
+    index file. When I hit the command quit i will close the file befoe executed
+    
