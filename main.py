@@ -15,6 +15,7 @@ def display_menu():
 def main():
     """Interactive menu"""
     btree = None
+    f = None
     while True:
         display_menu()
         command = input("Enter command: ").strip().lower()
@@ -23,12 +24,13 @@ def main():
             btree = create(filename)
         elif command in {"2", "open"}:
             filename = input("Enter filename: ")
-            btree = open_file(filename)
+            btree, f = open_file(filename)
         elif command in {"3", "insert"}:
             if btree:
                 key = int(input("Enter key: "))
                 value = int(input("Enter value: "))
                 insert(btree, key, value)
+                f.flush()
             else:
                 print("No index file is open. Please create or open a new index file")
         elif command in {"4", "search"}:
@@ -39,8 +41,9 @@ def main():
                 print("No Inde file is open, Please create or open a new index file. ")
         elif command in {"5", "load"}:
             if btree:
-                filename = input("Enter the loading file: ")
-                load(btree, filename)
+                index_file = input("Enter the loading file: ")
+                load(btree, index_file)
+                f.flush
         elif command in {"6", "print"}:
             if btree:
                 print_btree(btree)
@@ -48,12 +51,16 @@ def main():
                 print("No Inde file is open, Please create or open a new index file. ")
         elif command in {"7", "extract"}:
             if btree:
-                filename = input("Enter the file to save to: ")
-                extract(btree, filename)
+                save_file = input("Enter the file to save to: ")
+                extract(btree, save_file)
+                f.flush()
             else:
                 print("No Inde file is open, Please create or open a new index file. ")
         elif command in {"8", "quit"}:
             print("You exits program")
+            if f:
+                f.flush()
+                f.close()
             break
         else:
             print("Invalid command, please select from the menu")
