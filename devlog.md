@@ -58,4 +58,8 @@ It turn out, I put the wrong function for the create command
 ### 12/8/2024 9:22 pm
 The create command was fail and I found out the error is wrong type when create a file
     in the commandHandler.py program
+
+### 12/8/2024 9:35 pm
+The insert in the btree has problem, the problame probally handle the node not problay
+
     

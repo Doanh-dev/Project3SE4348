@@ -6,11 +6,11 @@ def create(index_file):
     if os.path.exists(index_file):
         overwrite = input("File already exists. Overite? (yes/no): ").strip().lower()
         if overwrite != "yes":
-            print("Aborting creation.")
+            print(f"The {index_file} has been overwrited")
             return None
     with open(index_file, 'wb+') as f:
         btree = BTree(degree=10, file = f)
-        print(f"The {index_file} has been overwirte")
+        print(f"The {index_file} has been create")
         return btree
     
 def open_file(index_file):
@@ -33,7 +33,7 @@ def open_file(index_file):
 def insert(btree, key, value):
     """insert a key-value pari into the Btree"""
     if btree:
-        if btree.search(key):
+        if not btree.search(key):
             btree.insert(key, value)
             print(f"Key {key} has value {value} is inserted.")
         else: 
