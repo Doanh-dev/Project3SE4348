@@ -46,3 +46,8 @@ need to test and make addition if need
 The main program should search the key if is already exist or not before insearching and loading
 The load file should be the csv file so need to check the file before loading
 Also need to promt the user about the extensiton of the index file
+
+### 12/8/2024 8:22 pm
+Fix the commandHandler program to prevent dublicate
+need to test the programs
+
