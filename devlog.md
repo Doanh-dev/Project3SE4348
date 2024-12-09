@@ -51,6 +51,7 @@ Also need to promt the user about the extensiton of the index file
 Fix the commandHandler program to prevent dublicate
 need to test the programs
 
-### 12/8/2024 9:16 pm
+### 12/8/2024 9:17 pm
 I am stating testing each command and I am looking for that the wrong printing text
-I turn out put the wrong function
+It turn out, I put the wrong function for the create command
+
