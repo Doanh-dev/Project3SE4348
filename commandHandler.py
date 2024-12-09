@@ -33,8 +33,11 @@ def open_file(index_file):
 def insert(btree, key, value):
     """insert a key-value pari into the Btree"""
     if btree:
-        btree.insert(key, value)
-        print(f"Key {key} has value {value} is inserted.")
+        if btree.search(key):
+            btree.insert(key, value)
+            print(f"Key {key} has value {value} is inserted.")
+        else: 
+            print("The key is already exist in the btree")
     else:
         print("Indexed file need to be opended or create to procceed.")
         
@@ -58,7 +61,7 @@ def load(btree, file_name):
         for line in f:
             try:
                 key, value = map(int, line.strip().split(","))
-                btree.insert(key, value)
+                insert(btree,key, value)
             except ValueError:
                 print(f"Invalid line in file: {line.strip()}. Skipping.")
 
