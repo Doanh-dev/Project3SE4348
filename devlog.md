@@ -41,3 +41,8 @@ need to create a python file
 ### 12/8/2024 3:30 pm
 Finish the main.py program
 need to test and make addition if need
+
+### 12/8/2024 7:44 pm
+The main program should search the key if is already exist or not before insearching and loading
+The load file should be the csv file so need to check the file before loading
+Also need to promt the user about the extensiton of the index file
