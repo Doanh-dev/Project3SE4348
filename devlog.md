@@ -74,4 +74,6 @@ My approach work, I can do the the insert, print, and search, However it reach a
     close the file properly that lead to leaking. 
 My approach for this solution is make a variable file and assign it to whatever open or create
     index file. When I hit the command quit i will close the file befoe executed
-    
+
+### 12/8/2024 11:50 pm
+All the funciton work but I think my issue about saving the content in the index file can't fix 
